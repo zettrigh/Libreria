@@ -15,23 +15,25 @@
     
     <form action="../controller/RegisterController.php" method="POST">
         
-        <label for="nombre">Nombre</label></br>
-        <input type="text" id="nombre" name="UserName" required></br>
+        <label for="nombre">Nombre</label>
+        <input type="text" name="UserName" required></br></br>
         
-        <label for="apellido">Apellido</label></br>
-        <input type="text" id="apellido" name="UserLastname" required></br>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="UserLastname" required></br></br>
         
-        <label for="email">Email</label></br>
-        <input type="email" id="email" name="UserEmail" required></br>
+        <label for="email">Email</label>
+        <input type="email" name="UserEmail" required></br></br>
         
-        <label for="password">Contraseña</label></br>
-        <input type="password" id="password" name="UserPassword" required></br>
+        <label for="password">Contraseña</label>
+        <input type="password" name="UserPassword" required></br></br>
             
-        <label for="password_confirm">Confirmar contraseña</label></br>
-        <input type="password" id="password_confirm" name="UserPassworConfirm" required></br>
+        <label for="password_confirm">Confirmar contraseña</label>
+        <input type="password" name="UserPassworConfirm" required></br></br>
     
         <input type="reset" value="Limpiar campos">
         <button type="submit" value="register">Registrar</button>
     </form>
+
+    <a href="../index.php"><button>volver</button></a>
 </body>
 </html>

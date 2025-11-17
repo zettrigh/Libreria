@@ -1,20 +1,20 @@
 <?php
 // Controlador para el registro de usuarios
-require_once '../model/Usuario.php';
+require_once '../model/Autores.php';
 require_once '../config/Connection_Data_Base.php';
 
 
 // Crear una nueva conexión a la base de datos
 $connection = new DataBase("localhost", "root", "", "libreria");
-$pdo = $connection->getConnection();
+$Pdo = $connection->getConnection();
 
 // Crear un nuevo usuario
-if ($pdo) {
-    $User = new User($pdo);
-    $User->Name = $_POST['UserName'];
-    $User->Lastname = $_POST['UserLastname'];
-    $User->Email = $_POST['UserEmail'];
-    $User->Password = $_POST['UserPassword'];
+if ($Pdo) {
+    $User = new User($Pdo);
+    $User->Name = $_GET['UserName'];
+    $User->Lastname = $_GET['UserLastname'];
+    $User->Email = $_GET['UserEmail'];
+    $User->Password = $_GET['UserPassword'];
 
     // Intentar crear el usuario en la base de datos
     if ($User->InsertUser()) {

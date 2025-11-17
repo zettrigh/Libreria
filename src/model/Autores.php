@@ -1,12 +1,12 @@
 <?php
 require_once '../config/Connection_Data_Base.php';
 // Definición de la clase User
-class User {
+class Author {
     // Propiedades del usuario
     public $Name;
     public $Lastname;
-    public $Email;
-    public $Password;
+    public $Nationality;
+    public $Birthdate;
     private $Conn;
 
     // Constructor que recibe la conexión a la base de datos
@@ -14,14 +14,14 @@ class User {
         $this->Conn = $Connection;
     }
     
-    // Método para crear un nuevo usuario
+    // Método para crear un nuevo autor
     public function InsertUser() {
-        $Query = "INSERT INTO usuarios (Nombre, Apellido, Email, Contrasenia) VALUES (?, ?, ?, ?)";
+        $Query = "INSERT INTO autores (Nombre, Apellido, Nacionalidad, Fecha_nacimiento) VALUES (?, ?, ?, ?)";
         //preparar la consulta
         $Stmt = $this->Conn->prepare($Query);
 
-        // Ejecutar la consulta con los datos del usuario
-        if ($Stmt->execute([$this->Name, $this->Lastname, $this->Email, password_hash($this->Password, PASSWORD_BCRYPT)])) {
+        // Ejecutar la consulta con los datos del autor
+        if ($Stmt->execute([$this->Name, $this->Lastname, $this->Nationality, $this->Birthdate])) {
             return true;
         } else {
             return false;
